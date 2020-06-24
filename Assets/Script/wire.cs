@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class wire : MonoBehaviour
 {
+    GameObject Player;
+
     Camera mainCam;
 
     LineRenderer lr;
@@ -26,8 +29,13 @@ public class wire : MonoBehaviour
     bool hitWall;
     public bool isGrabWall;
 
+    Image Aim;
+
+    RaycastHit[] rayHits;
+
     void Start()
     {
+        Player = GameObject.Find("Player").gameObject;
         mainCam = Camera.main;
 
         if(this.gameObject.name == "LeftWire")
@@ -58,6 +66,9 @@ public class wire : MonoBehaviour
         grabTime = 0.0f;
         hitWall = false;
         isGrabWall = false;
+
+        Aim = GameObject.Find("aim").transform.Find("Aim").GetComponent<Image>();
+        rayHits = Physics.RaycastAll(Vector3.zero, Vector3.zero, 0);
     }
 
     void Update()
@@ -168,20 +179,46 @@ public class wire : MonoBehaviour
         hitWall = false;
 
         Ray ray;
-        RaycastHit rayHit;
 
-        //메인카메라가 보는 중앙으로 ray 쏘기
-        ray = mainCam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0.0f));
+        //마우스 위치로 ray 쏘기
+        ray = mainCam.ScreenPointToRay(Input.mousePosition);
+        Aim.color = Color.white;
+        Debug.DrawRay(ray.origin, ray.direction * wireDistance, Color.black);
 
-        if (Physics.Raycast(ray, out rayHit, wireDistance))
+        //Fade Wall 되돌리기
+        if (rayHits.Length > 0)
         {
-            //쏜 ray가 'wall' tag를 가진 오브젝트에 맞았을 때
-            if (rayHit.transform.gameObject.tag == "Wall")
+            for (int i = 0; i < rayHits.Length; i++)
             {
-                rayHitPoint = rayHit.point;
-                hitWall = true;
+                if (rayHits[i].transform.gameObject.tag != "Wall") continue;                
+                Color temp = rayHits[i].transform.GetComponent<MeshRenderer>().material.color;
+                temp.a = 1.0f;
+                rayHits[i].transform.GetComponent<MeshRenderer>().material.color = temp;
             }
-            Debug.DrawRay(ray.origin, ray.direction * wireDistance, Color.black);
+        }
+
+        rayHits = Physics.RaycastAll(ray, wireDistance);
+
+        for (int i = 0; i < rayHits.Length; i++)
+        {
+            if (rayHits[i].transform.gameObject.tag != "Wall") continue;
+            //Debug.Log("ray hit : " + Vector3.Distance(mainCam.transform.position, rayHits[i].transform.position));
+            //Debug.Log(Vector3.Distance(mainCam.transform.position, Player.transform.position));
+            //플레이어와 카메라 사이일 때, Fade Wall
+            if (Vector3.Distance(mainCam.transform.position, rayHits[i].transform.position) < 12.0f)
+            {
+                Color temp = rayHits[i].transform.GetComponent<MeshRenderer>().material.color;
+                temp.a = 0.1f;
+                rayHits[i].transform.GetComponent<MeshRenderer>().material.color = temp;
+            }
+            //플레이어와 카메라 사이가 아닐 경우
+            else
+            {
+                rayHitPoint = rayHits[i].point;
+                hitWall = true;
+                Aim.color = Color.red;
+                break;
+            }
         }
     }
 

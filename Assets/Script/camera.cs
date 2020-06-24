@@ -41,12 +41,12 @@ public class camera : MonoBehaviour
 
     void Update()
     {
-        dist -= 0.5f * Input.mouseScrollDelta.y;
+        //dist -= 0.5f * Input.mouseScrollDelta.y;
 
-        if (dist < 3.0f)
-            dist = 3;
-        if (dist >= 10)
-            dist = 10;
+        //if (dist < 3.0f)
+        //    dist = 3;
+        //if (dist >= 10)
+        //    dist = 10;
 
         x += Input.GetAxis("Mouse X") * xSpeed * 0.015f;
         y -= Input.GetAxis("Mouse Y") * ySpeed * 0.015f;
