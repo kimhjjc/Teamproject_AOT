@@ -144,27 +144,6 @@ public class WireAction : MonoBehaviour
         return false;
     }
 
-    //줄이 늘어날 때의 저항력 체크를 위한 함수
-    bool Is_leftWire_extending_Resistance()
-    {
-        if (!qWire)
-        {
-            preLeftWireLength = Vector3.zero;
-            return false;
-        }
-        Vector3 curLeftWireLength = leftWire.transform.position - this.transform.position;
-        bool isCheckTrue = false;
-
-        if (curLeftWireLength.sqrMagnitude > preLeftWireLength.sqrMagnitude)
-            isCheckTrue = true;
-
-        preLeftWireLength = curLeftWireLength;
-
-        if (isCheckTrue) return true;
-        else return false;
-
-
-    }
 
     private void OnCollisionEnter(Collision collision)
     {

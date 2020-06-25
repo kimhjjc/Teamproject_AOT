@@ -9,6 +9,7 @@ TagManager:
   - Ground
   - Wall
   - wire
+  - Monster
   layers:
   - Default
   - TransparentFX

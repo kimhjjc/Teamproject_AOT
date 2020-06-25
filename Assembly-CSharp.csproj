@@ -11,7 +11,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{75C5D4B1-0722-6906-0B0C-0B03A7A77884}</ProjectGuid>
+    <ProjectGuid>{AF9CDF15-1EEC-39E2-5FC2-53B9F34BF767}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -118,7 +118,12 @@
     <Compile Include="Assets\Character\RPG Character Animation Pack FREE\SuperCharacterController\SuperCharacterController\Core\SuperStateMachine.cs" />
     <Compile Include="Assets\Character\RPG Character Animation Pack FREE\SuperCharacterController\SuperCharacterController\DebugDraw.cs" />
     <Compile Include="Assets\Character\RPG Character Animation Pack FREE\SuperCharacterController\SuperCharacterController\Math3d.cs" />
+    <Compile Include="Assets\Script\JsonManager.cs" />
+    <Compile Include="Assets\Script\LoadSceneEvent.cs" />
+    <Compile Include="Assets\Script\Monster.cs" />
     <Compile Include="Assets\Script\Player.cs" />
+    <Compile Include="Assets\Script\SoundManager.cs" />
+    <Compile Include="Assets\Script\UIEventOnKeyPress.cs" />
     <Compile Include="Assets\Script\WireAction.cs" />
     <Compile Include="Assets\Script\camera.cs" />
     <Compile Include="Assets\Script\wire.cs" />
@@ -132,6 +137,7 @@
     <None Include="Assets\Character\RPG Character Animation Pack FREE\Elements\ImageEffects\Shaders\CameraMotionBlurDX11.shader" />
     <None Include="Assets\Character\RPG Character Animation Pack FREE\Elements\ImageEffects\Shaders\VignettingShader.shader" />
     <None Include="Assets\Character\RPG Character Animation Pack FREE\Elements\ImageEffects\Shaders\ColorCorrectionCurves.shader" />
+    <None Include="Assets\UI\PSD Logo Templates\Fonts\Passion_One\OFL.txt" />
     <None Include="Assets\Character\RPG Character Animation Pack FREE\Elements\ImageEffects\Shaders\_BloomAndFlares\MultiPassHollywoodFlares.shader" />
     <None Include="Assets\Character\RPG Character Animation Pack FREE\Elements\ImageEffects\Shaders\SSAOShader.shader" />
     <None Include="Assets\Character\RPG Character Animation Pack FREE\Elements\ImageEffects\Shaders\ColorCorrectionCurvesSimple.shader" />
@@ -162,10 +168,12 @@
     <None Include="Assets\Character\RPG Character Animation Pack FREE\Elements\ImageEffects\Shaders\FisheyeShader.shader" />
     <None Include="Assets\Character\RPG Character Animation Pack FREE\Elements\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
     <None Include="Assets\Character\RPG Character Animation Pack FREE\Elements\ImageEffects\Shaders\_BloomAndFlares\BrightPassFilter.shader" />
+    <None Include="Assets\Maps\Fantasy Skybox FREE\Fog and Ambient references.txt" />
     <None Include="Assets\Character\RPG Character Animation Pack FREE\Elements\ImageEffects\Shaders\_BloomAndFlares\MobileBloom.shader" />
     <None Include="Assets\Character\RPG Character Animation Pack FREE\Elements\ImageEffects\Shaders\_BloomAndFlares\BlendForBloom.shader" />
     <None Include="Assets\Character\RPG Character Animation Pack FREE\Elements\ImageEffects\Shaders\_DepthOfField\DepthOfField34.shader" />
     <None Include="Assets\Character\RPG Character Animation Pack FREE\Elements\ImageEffects\Shaders\_DepthOfField\DepthOfFieldDX11.shader" />
+    <None Include="Assets\UI\PSD Logo Templates\Fonts\Lilita_One\OFL.txt" />
     <None Include="Assets\Character\RPG Character Animation Pack FREE\Elements\ImageEffects\Shaders\_BloomAndFlares\SeparableBlurPlus.shader" />
     <None Include="Assets\Character\RPG Character Animation Pack FREE\Elements\ImageEffects\Shaders\MotionBlur.shader" />
     <None Include="Assets\Character\RPG Character Animation Pack FREE\Elements\ImageEffects\Shaders\_DepthOfField\SeparableBlur.shader" />
@@ -177,44 +185,47 @@
     <None Include="Assets\Character\RPG Character Animation Pack FREE\Elements\ImageEffects\Shaders\ChromaticAberrationShader.shader" />
     <None Include="Assets\Character\RPG Character Animation Pack FREE\Elements\ImageEffects\Shaders\NoiseAndGrainDX11.shader" />
     <None Include="Assets\Character\RPG Character Animation Pack FREE\Elements\ImageEffects\Shaders\_DepthOfField\SeparableWeightedBlurDof34.shader" />
+    <None Include="Assets\Maps\Fantasy Skybox FREE\Readme.txt" />
     <None Include="Assets\Character\RPG Character Animation Pack FREE\Elements\ImageEffects\Shaders\BlendModesOverlay.shader" />
     <None Include="Assets\Character\RPG Character Animation Pack FREE\Elements\ImageEffects\Shaders\_DepthOfField\DepthOfFieldScatter.shader" />
     <None Include="Assets\Character\RPG Character Animation Pack FREE\Elements\ImageEffects\Shaders\EdgeDetectNormals.shader" />
     <None Include="Assets\Character\RPG Character Animation Pack FREE\Elements\ImageEffects\Shaders\NoiseEffectShaderRGB.shader" />
     <None Include="Assets\Character\RPG Character Animation Pack FREE\Elements\ImageEffects\Shaders\_Antialiasing\FXAA2.shader" />
     <None Include="Assets\Character\RPG Character Animation Pack FREE\Elements\ImageEffects\Shaders\NoiseEffectShaderYUV.shader" />
+    <None Include="Assets\UI\PSD Logo Templates\Fonts\Changa_One\OFL.txt" />
     <None Include="Assets\Character\RPG Character Animation Pack FREE\Elements\ImageEffects\Shaders\Contrast Stretch\Luminance.shader" />
     <None Include="Assets\Character\RPG Character Animation Pack FREE\Elements\ImageEffects\Shaders\_BloomAndFlares\BlurAndFlares.shader" />
     <None Include="Assets\Character\RPG Character Animation Pack FREE\Elements\ImageEffects\Shaders\_Antialiasing\NFAA.shader" />
     <None Include="Assets\Character\RPG Character Animation Pack FREE\SuperCharacterController\SuperCharacterController\README.txt" />
     <None Include="Assets\Character\RPG Character Animation Pack FREE\Elements\ImageEffects\Shaders\_Antialiasing\FXAAPreset2.shader" />
+    <None Include="Assets\UI\PSD Logo Templates\Fonts\Baloo\OFL.txt" />
     <None Include="Assets\Character\RPG Character Animation Pack FREE\Elements\ImageEffects\Shaders\_DepthOfField\TiltShiftHdrLensBlur.shader" />
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>C:/Users/조광형/Desktop/Git/Teamproject_AOT/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>C:/Users/조승현/Desktop/Teamproject_AOT-master (1)/Teamproject_AOT-master/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-      <HintPath>C:/Users/조광형/Desktop/Git/Teamproject_AOT/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+      <HintPath>C:/Users/조승현/Desktop/Teamproject_AOT-master (1)/Teamproject_AOT-master/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/조광형/Desktop/Git/Teamproject_AOT/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/조승현/Desktop/Teamproject_AOT-master (1)/Teamproject_AOT-master/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>C:/Users/조광형/Desktop/Git/Teamproject_AOT/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>C:/Users/조승현/Desktop/Teamproject_AOT-master (1)/Teamproject_AOT-master/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>C:/Users/조광형/Desktop/Git/Teamproject_AOT/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>C:/Users/조승현/Desktop/Teamproject_AOT-master (1)/Teamproject_AOT-master/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>C:/Users/조광형/Desktop/Git/Teamproject_AOT/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>C:/Users/조승현/Desktop/Teamproject_AOT-master (1)/Teamproject_AOT-master/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-      <HintPath>C:/Users/조광형/Desktop/Git/Teamproject_AOT/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+      <HintPath>C:/Users/조승현/Desktop/Teamproject_AOT-master (1)/Teamproject_AOT-master/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/조광형/Desktop/Git/Teamproject_AOT/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/조승현/Desktop/Teamproject_AOT-master (1)/Teamproject_AOT-master/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>C:/Users/조광형/Desktop/Git/Teamproject_AOT/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>C:/Users/조승현/Desktop/Teamproject_AOT-master (1)/Teamproject_AOT-master/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>D:/Unity/2019.3.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -392,12 +403,6 @@
     </Reference>
     <Reference Include="UnityEngine.XRModule">
       <HintPath>D:/Unity/2019.3.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.XRModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
-      <HintPath>D:/Unity/2019.3.9f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Common">
-      <HintPath>D:/Unity/2019.3.9f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Common.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>D:/Unity/2019.3.9f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>

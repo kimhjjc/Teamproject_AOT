@@ -11,7 +11,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{D441178F-38F0-F637-05BD-F4AB8EBDD93E}</ProjectGuid>
+    <ProjectGuid>{746AF2BC-1E81-733B-9D4D-3AF6CC77A0F1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp-Editor</AssemblyName>
@@ -62,39 +62,62 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Download\unity-chan!\Unity-chan! Model\Editor\CreateLocatorHere.cs" />
+    <Compile Include="Assets\BOXOPHOBIC\Utils\Scripts\BoxophobicUtils\Editor\GetBoxophobicFolder.cs" />
+    <Compile Include="Assets\BOXOPHOBIC\Utils\Scripts\Constants\Editor\Constants.cs" />
+    <Compile Include="Assets\BOXOPHOBIC\Utils\Scripts\SettingsUtils\Editor\LoadSettingsData.cs" />
+    <Compile Include="Assets\BOXOPHOBIC\Utils\Scripts\SettingsUtils\Editor\SaveSettingsData.cs" />
+    <Compile Include="Assets\BOXOPHOBIC\Utils\Scripts\StyledGUI\Editor\DrawInspectorBanner.cs" />
+    <Compile Include="Assets\BOXOPHOBIC\Utils\Scripts\StyledGUI\Editor\DrawInspectorCategory.cs" />
+    <Compile Include="Assets\BOXOPHOBIC\Utils\Scripts\StyledGUI\Editor\DrawWindowBanner.cs" />
+    <Compile Include="Assets\BOXOPHOBIC\Utils\Scripts\StyledGUI\Editor\DrawWindowCategory.cs" />
+    <Compile Include="Assets\BOXOPHOBIC\Utils\Scripts\StyledInspector\Editor\StyledBannerDrawer.cs" />
+    <Compile Include="Assets\BOXOPHOBIC\Utils\Scripts\StyledInspector\Editor\StyledCategoryDrawer.cs" />
+    <Compile Include="Assets\BOXOPHOBIC\Utils\Scripts\StyledInspector\Editor\StyledInteractiveDrawer.cs" />
+    <Compile Include="Assets\BOXOPHOBIC\Utils\Scripts\StyledInspector\Editor\StyledMessageDrawer.cs" />
+    <Compile Include="Assets\BOXOPHOBIC\Utils\Scripts\StyledInspector\Editor\StyledPopupArrayDrawer.cs" />
+    <Compile Include="Assets\BOXOPHOBIC\Utils\Scripts\StyledInspector\Editor\StyledPopupLayersDrawer.cs" />
+    <Compile Include="Assets\BOXOPHOBIC\Utils\Scripts\StyledInspector\Editor\StyledRangeOptionsDrawer.cs" />
+    <Compile Include="Assets\BOXOPHOBIC\Utils\Scripts\StyledInspector\Editor\StyledSpaceDrawer.cs" />
+    <Compile Include="Assets\BOXOPHOBIC\Utils\Scripts\StyledInspector\Editor\StyledTexturePreviewDrawer.cs" />
+    <Compile Include="Assets\BOXOPHOBIC\Utils\Scripts\StyledMaterial\Editor\StyledBannerDrawer.cs" />
+    <Compile Include="Assets\BOXOPHOBIC\Utils\Scripts\StyledMaterial\Editor\StyledCategoryDrawer.cs" />
+    <Compile Include="Assets\BOXOPHOBIC\Utils\Scripts\StyledMaterial\Editor\StyledDiffusionMaterialDrawer.cs" />
+    <Compile Include="Assets\BOXOPHOBIC\Utils\Scripts\StyledMaterial\Editor\StyledInteractiveDrawer.cs" />
+    <Compile Include="Assets\BOXOPHOBIC\Utils\Scripts\StyledMaterial\Editor\StyledMessageDrawer.cs" />
+    <Compile Include="Assets\BOXOPHOBIC\Utils\Scripts\StyledMaterial\Editor\StyledSpaceDrawer.cs" />
+    <Compile Include="Assets\BOXOPHOBIC\Utils\Scripts\StyledMono\Editor\StyledMonoBehaviourEditor.cs" />
     <Reference Include="UnityEditor.TestRunner">
-      <HintPath>D:/Unity/TeamProject/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
+      <HintPath>C:/Users/조승현/Desktop/Teamproject_AOT-master (1)/Teamproject_AOT-master/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.TestRunner">
-      <HintPath>D:/Unity/TeamProject/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
+      <HintPath>C:/Users/조승현/Desktop/Teamproject_AOT-master (1)/Teamproject_AOT-master/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>D:/Unity/TeamProject/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>C:/Users/조승현/Desktop/Teamproject_AOT-master (1)/Teamproject_AOT-master/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-      <HintPath>D:/Unity/TeamProject/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+      <HintPath>C:/Users/조승현/Desktop/Teamproject_AOT-master (1)/Teamproject_AOT-master/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>D:/Unity/TeamProject/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/조승현/Desktop/Teamproject_AOT-master (1)/Teamproject_AOT-master/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>D:/Unity/TeamProject/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>C:/Users/조승현/Desktop/Teamproject_AOT-master (1)/Teamproject_AOT-master/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>D:/Unity/TeamProject/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>C:/Users/조승현/Desktop/Teamproject_AOT-master (1)/Teamproject_AOT-master/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>D:/Unity/TeamProject/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>C:/Users/조승현/Desktop/Teamproject_AOT-master (1)/Teamproject_AOT-master/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-      <HintPath>D:/Unity/TeamProject/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+      <HintPath>C:/Users/조승현/Desktop/Teamproject_AOT-master (1)/Teamproject_AOT-master/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>D:/Unity/TeamProject/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/조승현/Desktop/Teamproject_AOT-master (1)/Teamproject_AOT-master/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>D:/Unity/TeamProject/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>C:/Users/조승현/Desktop/Teamproject_AOT-master (1)/Teamproject_AOT-master/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>D:/Unity/2019.3.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -289,7 +312,7 @@
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/15.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
-      <HintPath>D:/Unity/TeamProject/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
+      <HintPath>C:/Users/조승현/Desktop/Teamproject_AOT-master (1)/Teamproject_AOT-master/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>D:/Unity/2019.3.9f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
@@ -648,7 +671,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp.csproj">
-      <Project>{CF8D1591-D435-4ECA-23B8-9AB93972C3C2}</Project>
+      <Project>{AF9CDF15-1EEC-39E2-5FC2-53B9F34BF767}</Project>
       <Name>Assembly-CSharp</Name>
     </ProjectReference>
   </ItemGroup>

@@ -61,7 +61,7 @@ public class wire : MonoBehaviour
         doWireBack = false;
         isLineRender = false;
         
-        wireDistance = 50.0f;
+        wireDistance = 100.0f;
 
         grabTime = 0.0f;
         hitWall = false;
