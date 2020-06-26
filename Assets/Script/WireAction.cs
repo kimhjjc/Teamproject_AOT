@@ -7,7 +7,7 @@ using UnityEngine;
 public class WireAction : MonoBehaviour
 {
     public float speed;
-    public float wireActionSpeed = 0.5f;
+    public float wireActionSpeed = 0.2f;
     public float gravity;
 
     GameObject Camera;
@@ -99,7 +99,7 @@ public class WireAction : MonoBehaviour
             isSliding = true;
             isGround = false;
 
-            wireForce = (leftWire.transform.position - this.transform.position).normalized * wireActionSpeed;
+            wireForce = (leftWire.transform.position - this.transform.position).normalized;
         }
 
         if (eWire)
@@ -107,10 +107,10 @@ public class WireAction : MonoBehaviour
             isSliding = true;
             isGround = false;
 
-            wireForce += (rightWire.transform.position - this.transform.position).normalized * wireActionSpeed;
+            wireForce += (rightWire.transform.position - this.transform.position).normalized;
         }
 
-        wireForce = wireForce.normalized;
+        wireForce = wireForce.normalized * wireActionSpeed;
         m_rigidbody.AddForce(wireForce, ForceMode.VelocityChange);
 
         // 캐릭터 모델을 벽을 향해 회전

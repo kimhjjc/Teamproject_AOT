@@ -190,6 +190,7 @@ public class wire : MonoBehaviour
         {
             for (int i = 0; i < rayHits.Length; i++)
             {
+                if (!rayHits[i].transform) continue;
                 if (rayHits[i].transform.gameObject.tag != "Wall") continue;                
                 Color temp = rayHits[i].transform.GetComponent<MeshRenderer>().material.color;
                 temp.a = 1.0f;
