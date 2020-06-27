@@ -10448,7 +10448,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -10553,6 +10553,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2046936973}
+  - component: {fileID: 2046936974}
   m_Layer: 5
   m_Name: Audio
   m_TagString: Untagged
@@ -10580,6 +10581,24 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2046936974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2046936972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70c04452a2738634387ea81b51587e87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  music: {fileID: 2486830381344358515}
+  sound: {fileID: 2486830379868482603}
+  bgm:
+  - {fileID: 2040025837}
+  player: []
+  monster: []
 --- !u!1 &2053826752 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1017104576938822, guid: 52b2dd90b973b4b4cae0206dc54205e3,
@@ -34530,7 +34549,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2486830380484350756}
-        m_MethodName: LoadeExitButton
+        m_MethodName: LoadExitButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -34678,7 +34697,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2486830380484350757}
   - component: {fileID: 2486830380484350756}
-  - component: {fileID: 2486830380484350760}
   m_Layer: 5
   m_Name: CanvasManager
   m_TagString: Untagged
@@ -34686,22 +34704,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2486830380484350760
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2486830380484350759}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70c04452a2738634387ea81b51587e87, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  music: {fileID: 2486830381344358515}
-  sound: {fileID: 2486830379868482603}
-  bgm: {fileID: 2040025837}
-  sounds: []
 --- !u!222 &2486830380526348658
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -35017,7 +35019,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2486830380484350756}
-        m_MethodName: LoadeScene
+        m_MethodName: LoadScene
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -35331,7 +35333,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2486830380484350756}
-        m_MethodName: LoadeButton
+        m_MethodName: LoadButton
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 2486830379869995896}
@@ -35404,7 +35406,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2486830380484350756}
-        m_MethodName: LoadeButton
+        m_MethodName: LoadButton
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 2486830380241165427}
@@ -36249,7 +36251,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2486830380484350756}
-        m_MethodName: LoadeButton
+        m_MethodName: LoadButton
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 2486830379869995896}
@@ -36670,7 +36672,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2486830380484350756}
-        m_MethodName: LoadeButton
+        m_MethodName: LoadButton
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 2486830380241165427}
