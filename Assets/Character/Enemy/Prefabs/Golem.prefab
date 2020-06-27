@@ -748,6 +748,8 @@ GameObject:
   - component: {fileID: 1320650152766081303}
   - component: {fileID: 1973222750}
   - component: {fileID: 1973222751}
+  - component: {fileID: 3466896350838586683}
+  - component: {fileID: 8543791534262876865}
   m_Layer: 0
   m_Name: Golem
   m_TagString: Monster
@@ -856,6 +858,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAtk: 0
   atkSfx: {fileID: 0}
+--- !u!114 &3466896350838586683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1320650153894372133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 012e4ebe4a4d9714ab0a6cf77639af90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &8543791534262876865
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1320650153894372133}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 2}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &1320650153958061869
 GameObject:
   m_ObjectHideFlags: 0

@@ -71,9 +71,9 @@ public class Weapon : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Enemy" && hitAble)
+        if (other.gameObject.tag == "Monster" && hitAble)
         {
-            // 데미지 들어가는 부분 안넣음
+            other.gameObject.GetComponent<MonsterParameter>().getDamage(damage);
             durability--;
             hitAble = false;
             Debug.Log(durability);

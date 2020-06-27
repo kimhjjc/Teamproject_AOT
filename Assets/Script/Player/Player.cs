@@ -8,8 +8,11 @@ public class Player : MonoBehaviour
     Rigidbody m_rigidbody;
     Animator animator;
     WireAction wireAction;
-    
+
+    static int hp;
     float speed;
+
+    bool isAlive;
 
     Transform weapon;
     public Transform getItemParent;
@@ -17,9 +20,7 @@ public class Player : MonoBehaviour
 
     float AttackCooltime;
     float ObjectCooltime;
-
-    bool isGrounded;
-
+    
     void Start()
     {
         mainCam = transform.GetChild(1);
@@ -29,18 +30,20 @@ public class Player : MonoBehaviour
         animator.SetBool("JumpAble", false);
         animator.SetBool("Dash", false);
         wireAction = GetComponent<WireAction>();
-        
 
-        weapon = GameObject.Find("Weapon").transform;
+        hp = 100;
+        isAlive = true;
+
+        weapon = GameObject.Find("Player_Weapon").transform;
         getItemParent = null;
         AttackCooltime = 0.0f;
         ObjectCooltime = 0;
-
-        isGrounded = false;
     }
 
     void Update()
     {
+        Player_Death();
+
         CooltimeManager();
 
         //Move();
@@ -49,6 +52,12 @@ public class Player : MonoBehaviour
 
     public void Move()
     {
+        if (!isAlive)
+        {
+            m_rigidbody.velocity = Vector3.zero;
+            return;
+        }
+
         animator.SetBool("Dash", false);
         animator.SetBool("Move", false);
 
@@ -107,17 +116,11 @@ public class Player : MonoBehaviour
         
     }
 
-    bool IsGrounded()
-    {
-        if (isGrounded)
-            return true;
-        else
-            return false;
-    }
-
 
     void Attack()
     {
+        if (!isAlive) return;
+
         if (Input.GetMouseButtonDown(0) && AttackCooltime <= 0.0f)
         {
             animator.Play("Attack1");
@@ -127,7 +130,28 @@ public class Player : MonoBehaviour
                 weapon.GetChild(0).GetComponent<Weapon>().hitAble = true;
         }
 
+        if(AttackCooltime <= 0.0f && getItemParent)
+        {
+            weapon.GetChild(0).GetComponent<Weapon>().hitAble = false;
+        }
+
     }
+
+    public void Player_Hit_Damage(int dmg)
+    {
+        hp -= dmg;
+    }
+
+    void Player_Death()
+    {
+        if (hp <= 0 && isAlive)
+        {
+            animator.Play("Death");
+            isAlive = false;
+        }
+    }
+
+
 
     void CooltimeManager()
     {
@@ -141,11 +165,6 @@ public class Player : MonoBehaviour
 
     private void OnCollisionStay(Collision other)
     {
-        if (other.gameObject.tag == "Ground")
-        {
-            isGrounded = true;
-            animator.SetBool("JumpAble", true);
-        }
 
         if (Input.GetKeyDown(KeyCode.F) && getItemParent && ObjectCooltime <= 0)
         {
