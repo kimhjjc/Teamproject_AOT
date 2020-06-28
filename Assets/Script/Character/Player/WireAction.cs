@@ -111,6 +111,7 @@ public class WireAction : MonoBehaviour
         }
 
         wireForce = wireForce.normalized * wireActionSpeed;
+        wireForce.y *= 2.0f;
         m_rigidbody.AddForce(wireForce, ForceMode.VelocityChange);
 
         // 캐릭터 모델을 벽을 향해 회전

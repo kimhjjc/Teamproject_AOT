@@ -41,7 +41,7 @@ public class camera : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape)) Cursor.lockState = CursorLockMode.None;
+        //if (Input.GetKeyDown(KeyCode.Escape)) Cursor.lockState = CursorLockMode.None;
         if (Cursor.lockState == CursorLockMode.None) return;
         //dist -= 0.5f * Input.mouseScrollDelta.y;
 

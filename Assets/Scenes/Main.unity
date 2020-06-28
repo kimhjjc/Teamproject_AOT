@@ -10851,7 +10851,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  wireActionSpeed: 0.2
+  wireActionSpeed: 0.7
   gravity: 0
 --- !u!136 &1599150110
 CapsuleCollider:
