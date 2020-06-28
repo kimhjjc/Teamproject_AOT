@@ -10,8 +10,9 @@ public class MoveAgent : MonoBehaviour
     public int nextIdx = 0;
 
     private NavMeshAgent agent;
-    private Transform player;
+    private EnemyStat enemyStat;
     private Transform enemy;
+    private Transform player;
 
     private readonly float patrollSpeed = 1.5f;
     private readonly float traceSpeed = 4.0f;
@@ -34,6 +35,7 @@ public class MoveAgent : MonoBehaviour
         }
     }
 
+    public bool tracing;
     private Vector3 _traceTarget;
     public Vector3 traceTarget
     {
@@ -63,6 +65,7 @@ public class MoveAgent : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         enemy = GetComponent<Transform>();
+        enemyStat = GetComponent<EnemyStat>();
         agent = GetComponent<NavMeshAgent>();
         agent.autoBraking = false;
         agent.updateRotation = false;
@@ -95,17 +98,18 @@ public class MoveAgent : MonoBehaviour
         _patrolling = false;
     }
 
+    Quaternion rot;
     public void Update()
     {
-        if(agent.isStopped == false)
-        {
-            Quaternion rot = Quaternion.LookRotation(player.position - enemy.position);
-            enemy.rotation = Quaternion.Slerp(enemy.rotation, rot, Time.deltaTime * damping);
-        }
-        
+        if (enemyStat.isAlive == false) return;
+
+        if(tracing) rot = Quaternion.LookRotation(player.position - enemy.position);
+        else if(agent.isStopped == false) rot = Quaternion.LookRotation(agent.destination - enemy.position);
+        enemy.rotation = Quaternion.Slerp(enemy.rotation, rot, Time.deltaTime * damping);
+
         if (!_patrolling) return;
 
-        if(agent.velocity.sqrMagnitude >= 0.2f * 0.2f && agent.remainingDistance <= 0.5f)
+        if (agent.velocity.sqrMagnitude >= 0.2f * 0.2f && agent.remainingDistance <= 0.5f)
         {
             nextIdx = ++nextIdx % wayPoints.Count;
             MoveWayPoint();

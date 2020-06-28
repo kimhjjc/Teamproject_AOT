@@ -1,7 +1,7 @@
 {
-    "name": "EnemyAD",
+    "name": "CharacterAD",
     "references": [
-        "AudioAD"
+        "GUID:dba9011fab86b0942bc0c04546eab232"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

@@ -7,8 +7,7 @@ public class Weapon : MonoBehaviour
     // 무기의 파라미터
     int durability;     // 내구도
     int damage;
-
-
+    
     Player player;
     public bool hitAble;
 
@@ -61,7 +60,6 @@ public class Weapon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         if(durability <= 0)
         {
             player.getItemParent = null;
@@ -73,11 +71,10 @@ public class Weapon : MonoBehaviour
     {
         if (other.gameObject.tag == "Monster" && hitAble)
         {
-            other.gameObject.GetComponent<MonsterParameter>().getDamage(damage);
+            other.gameObject.GetComponent<EnemyStat>().TakeDamage(damage);
             durability--;
             hitAble = false;
             Debug.Log(durability);
         }
     }
-
 }

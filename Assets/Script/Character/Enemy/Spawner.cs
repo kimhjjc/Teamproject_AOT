@@ -17,7 +17,7 @@ public class Spawner: MonoBehaviour
     private List<Transform> spawnPoint;
     public List<Monster> mosterPrefab;
     private List<GameObject> monsters;
-
+    
     private void Awake()
     {
         spawnPoint = new List<Transform>();
@@ -26,13 +26,9 @@ public class Spawner: MonoBehaviour
         {
             spawnPoint.Add(spawnPoints.transform.GetChild(i));
         }
-    }
-
-    private void Start()
-    {
         Spawn();
     }
-
+    
     private void Spawn()
     {
         foreach (Transform transform in spawnPoint) {

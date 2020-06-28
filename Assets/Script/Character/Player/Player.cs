@@ -9,10 +9,9 @@ public class Player : MonoBehaviour
     Animator animator;
     WireAction wireAction;
 
-    static int hp;
     float speed;
 
-    bool isAlive;
+    PlayerStats playerStat;
 
     Transform weapon;
     public Transform getItemParent;
@@ -25,14 +24,12 @@ public class Player : MonoBehaviour
     {
         mainCam = transform.GetChild(1);
         m_rigidbody = GetComponent<Rigidbody>();
+        playerStat = GetComponent<PlayerStats>();
         animator = GetComponentInChildren<Animator>();
         animator.SetBool("Move", false);
         animator.SetBool("JumpAble", false);
         animator.SetBool("Dash", false);
         wireAction = GetComponent<WireAction>();
-
-        hp = 100;
-        isAlive = true;
 
         weapon = GameObject.Find("Player_Weapon").transform;
         getItemParent = null;
@@ -42,17 +39,14 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        Player_Death();
-
         CooltimeManager();
-
         //Move();
         Attack();
     }
 
     public void Move()
     {
-        if (!isAlive)
+        if (!playerStat.isAlive)
         {
             m_rigidbody.velocity = Vector3.zero;
             return;
@@ -116,14 +110,13 @@ public class Player : MonoBehaviour
         
     }
 
-
     void Attack()
     {
-        if (!isAlive) return;
+        if (!playerStat.isAlive) return;
 
         if (Input.GetMouseButtonDown(0) && AttackCooltime <= 0.0f)
         {
-            animator.Play("Attack1");
+            animator.Play("Attack");
             AttackCooltime = 0.5f;
             // 무기를 한번 휘두를 때 한번만 공격
             if (getItemParent)
@@ -136,23 +129,7 @@ public class Player : MonoBehaviour
         }
 
     }
-
-    public void Player_Hit_Damage(int dmg)
-    {
-        hp -= dmg;
-    }
-
-    void Player_Death()
-    {
-        if (hp <= 0 && isAlive)
-        {
-            animator.Play("Death");
-            isAlive = false;
-        }
-    }
-
-
-
+    
     void CooltimeManager()
     {
         if (AttackCooltime > 0.0f)

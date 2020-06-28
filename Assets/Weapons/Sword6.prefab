@@ -1,5 +1,23 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &875535179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1684946337643382444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &1686357378860715294
 GameObject:
   m_ObjectHideFlags: 0
@@ -210,6 +228,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 825ce90b167975540b18af822006f006, type: 3}
+--- !u!1 &1684946337643382444 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1412724683092646, guid: 825ce90b167975540b18af822006f006,
+    type: 3}
+  m_PrefabInstance: {fileID: 1686357378136732682}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1690621111620619686 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4908118435609004, guid: 825ce90b167975540b18af822006f006,

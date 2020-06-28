@@ -62,13 +62,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Script\Audio\AudioData.cs" />
-    <Compile Include="Assets\Script\Audio\AudioManager.cs" />
+    <Compile Include="Assets\HealthHeartSystem\Scripts\HealthBarController.cs" />
+    <Compile Include="Assets\UI\QuickOutline\Scripts\Outline.cs" />
     <None Include="Assets\UI\PSD Logo Templates\Fonts\Passion_One\OFL.txt" />
+    <None Include="Assets\UI\QuickOutline\Resources\Shaders\OutlineMask.shader" />
     <None Include="Assets\Maps\Fantasy Skybox FREE\Fog and Ambient references.txt" />
     <None Include="Assets\UI\PSD Logo Templates\Fonts\Lilita_One\OFL.txt" />
     <None Include="Assets\Maps\Fantasy Skybox FREE\Readme.txt" />
     <None Include="Assets\UI\PSD Logo Templates\Fonts\Changa_One\OFL.txt" />
+    <None Include="Assets\UI\QuickOutline\Resources\Shaders\OutlineFill.shader" />
     <None Include="Assets\UI\PSD Logo Templates\Fonts\Baloo\OFL.txt" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/조승현/Documents/GitHub/Teamproject_AOT/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
@@ -621,17 +623,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="CharacterAD.csproj">
+      <Project>{4D360992-8C1E-D8BC-12BC-944EE3FBB47D}</Project>
+      <Name>CharacterAD</Name>
+    </ProjectReference>
     <ProjectReference Include="EventAd.csproj">
       <Project>{02F315A5-626F-D33D-2130-1510C948E3F1}</Project>
       <Name>EventAd</Name>
     </ProjectReference>
-    <ProjectReference Include="PlayerAD.csproj">
-      <Project>{5BC02F4C-30A9-1199-251F-EF02057DC6C5}</Project>
-      <Name>PlayerAD</Name>
-    </ProjectReference>
-    <ProjectReference Include="EnemyAD.csproj">
-      <Project>{C4A79EB0-49A5-2645-0150-644ECD279700}</Project>
-      <Name>EnemyAD</Name>
+    <ProjectReference Include="AudioAD.csproj">
+      <Project>{F9A1DC71-ADD0-58C3-DAE3-D1160C082C53}</Project>
+      <Name>AudioAD</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

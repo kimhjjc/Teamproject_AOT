@@ -67,7 +67,7 @@ public class wire : MonoBehaviour
         hitWall = false;
         isGrabWall = false;
 
-        Aim = GameObject.Find("aim").transform.Find("Aim").GetComponent<Image>();
+        Aim = GameObject.Find("Canvas_player").transform.Find("Aim").GetComponent<Image>();
         rayHits = Physics.RaycastAll(Vector3.zero, Vector3.zero, 0);
     }
 
