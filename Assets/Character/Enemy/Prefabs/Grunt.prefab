@@ -616,7 +616,7 @@ GameObject:
   - component: {fileID: 2430545188419555543}
   m_Layer: 0
   m_Name: Axe
-  m_TagString: Untagged
+  m_TagString: enemy_weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -660,10 +660,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 012e4ebe4a4d9714ab0a6cf77639af90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isAlive: 0
-  health: 0
-  maxHealth: 0
-  maxTotalHealth: 0
 --- !u!1 &5488745590950584188
 GameObject:
   m_ObjectHideFlags: 0
@@ -803,7 +799,7 @@ GameObject:
   - component: {fileID: 514101781218386778}
   m_Layer: 0
   m_Name: Grunt
-  m_TagString: Monster
+  m_TagString: enemy_weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -817,7 +813,7 @@ Transform:
   m_GameObject: {fileID: 5488745591342777807}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 2, z: 1.5}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 5488745590163181131}
   - {fileID: 5488745589880281558}

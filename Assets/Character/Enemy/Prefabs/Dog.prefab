@@ -253,7 +253,7 @@ Transform:
   m_GameObject: {fileID: 4888853562451226255}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 2, z: 1.5}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 4888853562450867037}
   - {fileID: 4888853562450866867}
@@ -2456,10 +2456,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 012e4ebe4a4d9714ab0a6cf77639af90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isAlive: 0
-  health: 0
-  maxHealth: 0
-  maxTotalHealth: 0
 --- !u!1001 &7611702442700348849
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2470,6 +2466,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: b96201848d117da4ca7dc3ade4bd59de, type: 3}
       propertyPath: m_Name
       value: SwordPolyart
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: b96201848d117da4ca7dc3ade4bd59de, type: 3}
+      propertyPath: m_TagString
+      value: enemy_weapon
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b96201848d117da4ca7dc3ade4bd59de, type: 3}
       propertyPath: m_LocalPosition.x

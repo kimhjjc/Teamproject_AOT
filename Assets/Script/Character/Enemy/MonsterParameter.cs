@@ -1,29 +1,27 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class MonsterParameter : Stat
+public class MonsterParameter : MonoBehaviour
 {
+    private PlayerStats playerstats;
     private int damage;
-    
-    void Start()
+
+    private void Start()
     {
-        isAlive = true;
-        health = 50;
-        damage = 20;
+        playerstats = GameObject.FindObjectOfType<PlayerStats>();
     }
-    
     void Update()
     {
-        Dead();
+        playerstats.Dead();
+        if(Input.GetKeyUp(KeyCode.O))
+            playerstats.TakeDamage(damage);
     }
     
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag.Equals("Player"))
         {
-            Debug.Log("[Trigger-MonsterParameter]" + other.gameObject.name);
-            other.gameObject.GetComponent<PlayerStats>().TakeDamage(damage);
+            Debug.Log("[Trigger-MonsterParameter]" + other.gameObject.name + "=" + damage);
+            //PlayerStats.Instance.TakeDamage(damage);
         }
     }
 }
