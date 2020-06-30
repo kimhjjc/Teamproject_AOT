@@ -51,10 +51,12 @@ public class LoadSceneEvent : MonoBehaviour
     public void ShowCursor()
     {
         Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     public void hideCursor()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 }
