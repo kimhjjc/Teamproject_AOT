@@ -11,8 +11,6 @@ public class Player : MonoBehaviour
 
     float speed;
 
-    PlayerStats playerStat;
-
     Transform weapon;
     public Transform getItemParent;
     Vector3 ItemRotation;
@@ -24,7 +22,6 @@ public class Player : MonoBehaviour
     {
         mainCam = transform.GetChild(1);
         m_rigidbody = GetComponent<Rigidbody>();
-        playerStat = GetComponent<PlayerStats>();
         animator = GetComponentInChildren<Animator>();
         animator.SetBool("Move", false);
         animator.SetBool("JumpAble", false);
@@ -46,7 +43,7 @@ public class Player : MonoBehaviour
 
     public void Move()
     {
-        if (!playerStat.isAlive)
+        if (!PlayerStats.Instance.isAlive)
         {
             m_rigidbody.velocity = Vector3.zero;
             return;
@@ -112,10 +109,11 @@ public class Player : MonoBehaviour
 
     void Attack()
     {
-        if (!playerStat.isAlive) return;
+        if (!PlayerStats.Instance.isAlive) return;
 
         if (Input.GetMouseButtonDown(0) && AttackCooltime <= 0.0f)
         {
+            PlayerAudioSources.Instance.Play(PlayerAudioSources.State.ATTACK);
             animator.Play("Attack");
             AttackCooltime = 0.5f;
             // 무기를 한번 휘두를 때 한번만 공격
@@ -145,6 +143,7 @@ public class Player : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.F) && getItemParent && ObjectCooltime <= 0)
         {
+            PlayerAudioSources.Instance.Play(PlayerAudioSources.State.PUTDOWNWEAPON);
             // 손의 무기를 맵으로 다시 돌려둠
             Vector3 position = transform.position + transform.forward * 3.0f;
             position.y = 0.2f;
@@ -164,6 +163,7 @@ public class Player : MonoBehaviour
 
         if (other.gameObject.tag == "Object" && Input.GetKeyDown(KeyCode.F) && !getItemParent && ObjectCooltime <= 0)
         {
+            PlayerAudioSources.Instance.Play(PlayerAudioSources.State.PICKUPWEAPON);
             // 맵의 무기를 손으로 가져옴
             ItemRotation = other.transform.rotation.eulerAngles;
             getItemParent = other.transform.parent;

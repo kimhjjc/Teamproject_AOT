@@ -104,6 +104,8 @@ public class wire : MonoBehaviour
                 isLineRender = true;
                 isWireShoot = true;
                 doWireBack = false;
+
+                PlayerAudioSources.Instance.Play(PlayerAudioSources.State.WIRESHOOT);
             }
         }
 

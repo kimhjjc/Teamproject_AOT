@@ -10,7 +10,6 @@ TagManager:
   - Wall
   - wire
   - Monster
-  - enemy_weapon
   layers:
   - Default
   - TransparentFX

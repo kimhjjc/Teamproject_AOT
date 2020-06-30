@@ -3,24 +3,40 @@ using UnityEngine.UI;
 
 public class Counter : MonoBehaviour
 {
-    private int count;
-    public int killcount
+    #region Sigleton
+    private static Counter instance;
+    public static Counter Instance
     {
-        get { return transform.childCount - count; }
+        get
+        {
+            if (instance == null)
+                instance = FindObjectOfType<Counter>();
+            return instance;
+        }
+    }
+    #endregion
+
+    private int max;
+    public int count;
+    public int killCount
+    {
+        get { return max - count; }
     }
 
     public GameObject countText;
     public GameObject destroyCountText;
 
-    private void Start()
+    private void OnEnable()
     {
-        count = transform.childCount;
+        max = transform.childCount;
+        count = max;
         SetCount(countText, count);
     }
 
     private void Update()
     {
-        if (count != transform.childCount) UpdateCount();
+        if (max != count) UpdateCount();
+        else if(count <= 0) SetGameState("GameClear");
     }
 
     public void SetCount(GameObject go, int count)
@@ -30,7 +46,15 @@ public class Counter : MonoBehaviour
 
     public void UpdateCount()
     {
-        SetCount(countText, --count);
-        SetCount(destroyCountText, transform.childCount - count);
+        SetCount(countText, count);
+        SetCount(destroyCountText, killCount);
+    }
+
+    public GameObject wGameState;
+    public void SetGameState(string state)
+    {
+        wGameState.SetActive(true);
+        wGameState.transform.Find("GameState").GetComponent<Text>().text = state;
+        SetCount(wGameState.transform.Find("Kill").gameObject, killCount);
     }
 }

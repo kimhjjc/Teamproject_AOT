@@ -65,6 +65,8 @@
   <ItemGroup>
     <Compile Include="Assets\Script\Audio\AudioData.cs" />
     <Compile Include="Assets\Script\Audio\AudioManager.cs" />
+    <Compile Include="Assets\Script\Audio\AudioToAnimation.cs" />
+    <Compile Include="Assets\Script\Audio\PlayerAudioSources.cs" />
     <None Include="Assets\Script\Audio\AudioAD.asmdef" />
     <Reference Include="UnityEditor.UI">
       <HintPath>C:/Users/sb041/OneDrive/문서/GitHub/Teamproject_AOT/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>

@@ -613,10 +613,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5488745590888740329}
   - component: {fileID: 5488745590461346246}
-  - component: {fileID: 2430545188419555543}
   m_Layer: 0
   m_Name: Axe
-  m_TagString: enemy_weapon
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -648,18 +647,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.9999995, y: 101.18293, z: 60.143406}
   m_Center: {x: -0.000045496035, y: 48.09107, z: 22.759336}
---- !u!114 &2430545188419555543
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5488745590888740326}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 012e4ebe4a4d9714ab0a6cf77639af90, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &5488745590950584188
 GameObject:
   m_ObjectHideFlags: 0
@@ -795,7 +782,6 @@ GameObject:
   - component: {fileID: 5605247164431311542}
   - component: {fileID: 1345618659}
   - component: {fileID: 5488745591710252250}
-  - component: {fileID: 1345618660}
   - component: {fileID: 514101781218386778}
   m_Layer: 0
   m_Name: Grunt
@@ -874,9 +860,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isAlive: 0
-  health: 1
-  maxHealth: 1
-  maxTotalHealth: 1
+  health: 0
+  maxHealth: 0
+  damage: 20
 --- !u!114 &1345618659
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -890,7 +876,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
-  attackDis: 2
+  attackDis: 4.5
   traceDis: 12
 --- !u!114 &5488745591710252250
 MonoBehaviour:
@@ -907,20 +893,6 @@ MonoBehaviour:
   wayPoints: []
   nextIdx: 0
   tracing: 0
---- !u!114 &1345618660
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5488745591342777807}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b22d12dc9dd239144b0e42141fa29496, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isAtk: 0
-  atkSfx: {fileID: 0}
 --- !u!54 &514101781218386778
 Rigidbody:
   m_ObjectHideFlags: 0

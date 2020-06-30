@@ -748,7 +748,6 @@ GameObject:
   - component: {fileID: 2337233268220218976}
   - component: {fileID: 1973222750}
   - component: {fileID: 1320650152766081304}
-  - component: {fileID: 1973222751}
   - component: {fileID: 3851443629798548729}
   m_Layer: 0
   m_Name: Golem
@@ -827,9 +826,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isAlive: 0
-  health: 1
-  maxHealth: 1
-  maxTotalHealth: 1
+  health: 0
+  maxHealth: 0
+  damage: 20
 --- !u!114 &1973222750
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -843,7 +842,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
-  attackDis: 2
+  attackDis: 6
   traceDis: 18
 --- !u!114 &1320650152766081304
 MonoBehaviour:
@@ -860,20 +859,6 @@ MonoBehaviour:
   wayPoints: []
   nextIdx: 0
   tracing: 0
---- !u!114 &1973222751
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1320650153894372133}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b22d12dc9dd239144b0e42141fa29496, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isAtk: 0
-  atkSfx: {fileID: 0}
 --- !u!54 &3851443629798548729
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -7,7 +7,7 @@ public class Stat : MonoBehaviour
 
     public float health;
     public float maxHealth;
-    public float maxTotalHealth;
+    protected float maxTotalHealth;
 
     public float Health { get { return health; } }
     public float MaxHealth { get { return maxHealth; } }

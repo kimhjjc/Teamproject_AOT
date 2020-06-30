@@ -6,6 +6,20 @@ using UnityEngine.SceneManagement;
 
 public class LoadSceneEvent : MonoBehaviour
 {
+
+    #region Sigleton
+    private static LoadSceneEvent instance;
+    public static LoadSceneEvent Instance
+    {
+        get
+        {
+            if (instance == null)
+                instance = FindObjectOfType<LoadSceneEvent>();
+            return instance;
+        }
+    }
+    #endregion
+
     public List<GameObject> canvas;
 
     private void Awake()

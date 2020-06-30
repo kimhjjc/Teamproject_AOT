@@ -65,8 +65,6 @@
   <ItemGroup>
     <Compile Include="Assets\Script\Character\Enemy\Counter.cs" />
     <Compile Include="Assets\Script\Character\Enemy\EnemyAI.cs" />
-    <Compile Include="Assets\Script\Character\Enemy\EnemyAttack.cs" />
-    <Compile Include="Assets\Script\Character\Enemy\MonsterParameter.cs" />
     <Compile Include="Assets\Script\Character\Enemy\MoveAgent.cs" />
     <Compile Include="Assets\Script\Character\Enemy\Spawner.cs" />
     <Compile Include="Assets\Script\Character\HealthHeartSystem\EnemyStat.cs" />
@@ -624,6 +622,10 @@
     <ProjectReference Include="AudioAD.csproj">
       <Project>{F9A1DC71-ADD0-58C3-DAE3-D1160C082C53}</Project>
       <Name>AudioAD</Name>
+    </ProjectReference>
+    <ProjectReference Include="EventAd.csproj">
+      <Project>{02F315A5-626F-D33D-2130-1510C948E3F1}</Project>
+      <Name>EventAd</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -69,12 +69,10 @@ public class Weapon : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Monster" && hitAble)
+        if (other.gameObject.tag.Equals("Monster") && hitAble)
         {
-            other.gameObject.GetComponent<EnemyStat>().TakeDamage(damage);
             durability--;
             hitAble = false;
-            Debug.Log(durability);
         }
     }
 }

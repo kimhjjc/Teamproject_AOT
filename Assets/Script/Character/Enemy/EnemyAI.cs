@@ -15,29 +15,26 @@ public class EnemyAI : MonoBehaviour
     public State state = State.PATROL;
 
     private Transform player;
-    private Animator animPlayer;
-
     private Transform enemy;
-    private Animator animator;
+
     private EnemyStat enemyStat;
+    private Animator animator;
 
     public float attackDis = 2.0f;
     public float traceDis = 8.0f;
 
     private MoveAgent moveAgent;
-    private EnemyAttack enemyAtk;
 
     private readonly int hashMove = Animator.StringToHash("isMove");
+    private readonly int hashAtk = Animator.StringToHash("isAtk");
     private readonly int hashSpeed = Animator.StringToHash("speed");
     private readonly int hashDie = Animator.StringToHash("Die");
 
     private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-        animPlayer = player.Find("RPG-Character").GetComponent<Animator>();
         enemy = GetComponent<Transform>();
         moveAgent = GetComponent<MoveAgent>();
-        enemyAtk = GetComponent<EnemyAttack>();
         animator = GetComponent<Animator>();
     } 
 
@@ -56,25 +53,32 @@ public class EnemyAI : MonoBehaviour
             switch(state)
             {
                 case State.PATROL:
-                    enemyAtk.isAtk = false;
                     moveAgent.patrolling = true;
                     moveAgent.tracing = false;
+                    animator.SetBool(hashAtk, false);
                     animator.SetBool(hashMove, true);
                     break;
+
                 case State.TRACE:
-                    enemyAtk.isAtk = false;
+                    moveAgent.patrolling = false;
                     moveAgent.tracing = true;
                     moveAgent.traceTarget = player.position;
+                    animator.SetBool(hashAtk, false);
                     animator.SetBool(hashMove, true);
                     break;
+
                 case State.ATTACK:
                     moveAgent.Stop();
                     animator.SetBool(hashMove, false);
-                    if (enemyAtk.isAtk == false) enemyAtk.isAtk = true;
+                    animator.SetBool(hashAtk, true);
                     break;
+
                 case State.DIE:
                     moveAgent.Stop();
+                    animator.SetBool(hashMove, false);
+                    animator.SetBool(hashAtk, false);
                     animator.SetTrigger(hashDie);
+                    Counter.Instance.count -= 1;
                     enemyStat.Dead();
                     break;
             }
@@ -102,15 +106,12 @@ public class EnemyAI : MonoBehaviour
         animator.SetFloat(hashSpeed, moveAgent.speed);
     }
 
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag.Equals("Item"))
         {
-            if (animPlayer.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
-            {
-                Debug.Log("[Trigger-MonsterAI]" + this.gameObject.name);
-                state = State.DIE;
-            }
+            if (PlayerStats.Instance.isAttack()) state = State.DIE;
         }
     }
 }

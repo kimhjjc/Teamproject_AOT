@@ -7,29 +7,28 @@ using UnityEngine.UI;
 
 public class PlayerStats : Stat
 {
-    //#region Sigleton
-    //private static PlayerStats instance;
-    //public static PlayerStats Instance
-    //{
-    //    get
-    //    {
-    //        if (instance == null)
-    //            instance = FindObjectOfType<PlayerStats>();
-    //        return instance;
-    //    }
-    //}
-    //#endregion
+    #region Sigleton
+    private static PlayerStats instance;
+    public static PlayerStats Instance
+    {
+        get
+        {
+            if (instance == null)
+                instance = FindObjectOfType<PlayerStats>();
+            return instance;
+        }
+    }
+    #endregion
 
     private Animator animator;
-    public GameObject gameover;
-    private Counter counter;
 
-    void Start()
+    void Awake()
     {
         animator = GetComponentInChildren<Animator>();
-        counter = GameObject.FindObjectOfType<Counter>();
         isAlive = true;
-        health = 100;
+        maxTotalHealth = 5;
+        maxHealth = 100;
+        health = maxHealth;
     }
 
     void Update()
@@ -39,12 +38,28 @@ public class PlayerStats : Stat
 
     public override void Dead()
     {
-        if (health <= 0 && isAlive)
+        if (isAlive && health <= 0)
         {
+            PlayerAudioSources.Instance.Play(PlayerAudioSources.State.DEATH);
             animator.Play("Death");
             isAlive = false;
-            gameover.SetActive(true);
-            counter.SetCount(gameover, counter.killcount);
+            LoadSceneEvent.Instance.ShowCursor();
+            Counter.Instance.SetGameState("GameOver");
         }
+    }
+
+    public bool isAttack()
+    {
+        return animator.GetCurrentAnimatorStateInfo(0).IsName("Attack");
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag.Equals("Monster")) Debug.Log("[OnTriggerEnter][" + other.gameObject.name+"]"+ other.gameObject.GetComponent<EnemyAI>().state);
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.tag.Equals("Monster")) Debug.Log("[OnCollisionEnter][" + other.gameObject.name + "]" + other.gameObject.GetComponent<EnemyAI>().state);
     }
 }

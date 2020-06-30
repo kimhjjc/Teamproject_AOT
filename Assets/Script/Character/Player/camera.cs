@@ -30,7 +30,7 @@ public class camera : MonoBehaviour
 
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked; //커서 고정
+        LoadSceneEvent.Instance.hideCursor();
         Vector3 angles = transform.eulerAngles;
 
         x = angles.y;
@@ -41,7 +41,6 @@ public class camera : MonoBehaviour
 
     void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.Escape)) Cursor.lockState = CursorLockMode.None;
         if (Cursor.lockState == CursorLockMode.None) return;
         //dist -= 0.5f * Input.mouseScrollDelta.y;
 
